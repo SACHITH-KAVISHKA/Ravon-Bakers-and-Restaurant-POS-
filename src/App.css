@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* POS System Specific Styles */
+
+/* Touch-friendly buttons */
+button {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Prevent text selection on touch */
+.touch-manipulation {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure proper scrolling on touch devices */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for better touch experience */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Focus styles for accessibility */
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Prevent zoom on input focus on mobile devices */
+input[type="number"],
+input[type="text"] {
+  font-size: 16px;
+}
+
+/* Print styles for receipts */
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+/* Custom utilities for POS layout */
+.pos-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pos-panel {
+  height: 100%;
+  overflow-y: auto;
+}
